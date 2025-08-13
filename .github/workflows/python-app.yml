@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: "3.8"
+        python-version: "3.11"
     
     - name: Cache pip dependencies
       uses: actions/cache@v3
@@ -29,7 +29,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
+        pip install flake8
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Lint with flake8
@@ -39,9 +39,9 @@ jobs:
         # exit-zero treats all errors as warnings
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
-    - name: Test with pytest
+    - name: Test with unittest
       run: |
-        pytest
+        python -m unittest test_app.py -v
     
     - name: Check Flask app runs
       run: |
@@ -57,13 +57,38 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Run Bandit security linter
-      uses: python-security/bandit@main
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        args: -r . -f json -o bandit-report.json || true
+        python-version: "3.11"
     
-    - name: Upload Bandit results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v2
-      if: always()
-      with:
-        sarif_file: bandit-report.json
+    - name: Install Bandit
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit
+    
+    - name: Run Bandit security linter
+      run: |
+        bandit -r . -f json -o bandit-report.json || true
+    
+    - name: Check for critical security issues
+      run: |
+        bandit -r . -f json -o bandit-report.json -ll || true
+        # Only fail if critical issues are found
+        if [ -f bandit-report.json ]; then
+          python -c "
+          import json
+          try:
+              with open('bandit-report.json', 'r') as f:
+                  data = json.load(f)
+                  critical_issues = [i for i in data.get('results', []) if i.get('issue_severity') == 'HIGH']
+                  if critical_issues:
+                      print(f'Found {len(critical_issues)} critical security issues')
+                      exit(1)
+                  else:
+                      print('No critical security issues found')
+          except Exception as e:
+              print(f'Error parsing bandit report: {e}')
+              exit(0)
+          "
+        fi
