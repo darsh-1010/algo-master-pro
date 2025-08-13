@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Problem Solver & Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🧮 DSA Solver</h1>
+                <p>Master Data Structures & Algorithms</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Problem Selection Section -->
+            <section id="problem-selection" class="problem-selection">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="🔍 Search problems..." class="search-input">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-difficulty="all">All</button>
+                        <button class="filter-btn" data-difficulty="Easy">Easy</button>
+                        <button class="filter-btn" data-difficulty="Medium">Medium</button>
+                        <button class="filter-btn" data-difficulty="Hard">Hard</button>
+                    </div>
+                </div>
+                
+                <div id="problems-grid" class="problems-grid">
+                    <!-- Problems will be loaded here -->
+                </div>
+                
+                <!-- Problem Statistics -->
+                <div class="problem-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-problems">0</span>
+                        <span class="stat-label">Total Problems</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="easy-problems">0</span>
+                        <span class="stat-label">Easy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="medium-problems">0</span>
+                        <span class="stat-label">Medium</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="hard-problems">0</span>
+                        <span class="stat-label">Hard</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem Details Section -->
+            <section id="problem-details" class="problem-details" style="display: none;">
+                <div class="problem-header">
+                    <button class="back-btn" onclick="hideProblemDetails()">← Back to Problems</button>
+                    <h2 id="problem-title"></h2>
+                    <div class="problem-meta">
+                        <span class="difficulty-badge" id="problem-difficulty"></span>
+                        <span class="category-badge" id="problem-category"></span>
+                    </div>
+                </div>
+                
+                <div class="problem-statement">
+                    <h3>Problem Statement</h3>
+                    <p id="problem-statement-text"></p>
+                </div>
+
+                <div class="language-selection">
+                    <h3>Select Programming Language</h3>
+                    <div class="language-buttons">
+                        <button class="lang-btn" data-language="Python">🐍 Python</button>
+                        <button class="lang-btn" data-language="Java">☕ Java</button>
+                        <button class="lang-btn" data-language="C++">⚡ C++</button>
+                    </div>
+                </div>
+
+                <button id="solve-btn" class="solve-btn" onclick="solveProblem()">
+                    🚀 Generate Solution
+                </button>
+            </section>
+
+            <!-- Solution Container -->
+            <section id="solution-container" class="solution-container" style="display: none;">
+                <div class="solution-header">
+                    <h3>Solution for <span id="solution-problem-name"></span></h3>
+                    <p class="solution-language">Language: <span id="solution-language-display"></span></p>
+                </div>
+
+                <div class="solution-content">
+                    <!-- Loading State -->
+                    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Generating solution...</p>
+                    </div>
+
+                    <!-- Solution Sections -->
+                    <div id="solution-sections" class="solution-sections" style="display: none;">
+                        <!-- Explanation Section -->
+                        <div class="solution-section">
+                            <h4>📚 Solution Explanation</h4>
+                            <div id="solution-explanation" class="explanation-content"></div>
+                        </div>
+
+                        <!-- Code Section -->
+                        <div class="solution-section">
+                            <h4>💻 Code Solution</h4>
+                            <div class="code-container">
+                                <pre><code id="solution-code" class="language-python"></code></pre>
+                                <button class="copy-btn" onclick="copyCode()">📋 Copy Code</button>
+                            </div>
+                        </div>
+
+                        <!-- Complexity Analysis -->
+                        <div class="solution-section">
+                            <h4>⚡ Complexity Analysis</h4>
+                            <div id="complexity-analysis" class="complexity-content"></div>
+                        </div>
+
+                        <!-- Dry Run Examples -->
+                        <div class="solution-section">
+                            <h4>🔍 Dry Run Examples</h4>
+                            <div id="dry-run-examples" class="dry-run-content"></div>
+                        </div>
+
+                        <!-- Alternative Approaches -->
+                        <div class="solution-section">
+                            <h4>🔄 Alternative Approaches</h4>
+                            <div id="alternative-approaches" class="alternatives-content"></div>
+                        </div>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="error-message" class="error-message" style="display: none;">
+                        <p>❌ Error generating solution. Please try again.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 DSA Problem Solver. Built with ❤️ and AI.</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
