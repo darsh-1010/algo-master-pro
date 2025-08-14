@@ -362,6 +362,416 @@ DSA_PROBLEMS = {
         "difficulty": "Medium",
         "category": "Design, Hash Table",
         "tags": ["design", "hash-table", "average", "transportation"]
+    },
+    
+    # Advanced Array Problems
+    "Sliding Window Maximum": {
+        "statement": "Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.",
+        "difficulty": "Hard",
+        "category": "Array, Sliding Window",
+        "tags": ["array", "sliding-window", "deque", "monotonic-queue"]
+    },
+    "Longest Consecutive Sequence": {
+        "statement": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence. You must write an algorithm that runs in O(n) time.",
+        "difficulty": "Medium",
+        "category": "Array, Hash Table",
+        "tags": ["array", "hash-table", "union-find"]
+    },
+    "Find All Duplicates in an Array": {
+        "statement": "Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer appears once or twice, return an array of all the integers that appears twice.",
+        "difficulty": "Medium",
+        "category": "Array, Hash Table",
+        "tags": ["array", "hash-table", "in-place"]
+    },
+    "Rotate Array": {
+        "statement": "Given an array, rotate the array to the right by k steps, where k is non-negative.",
+        "difficulty": "Medium",
+        "category": "Array, Two Pointers",
+        "tags": ["array", "two-pointers", "rotation"]
+    },
+    "Spiral Matrix": {
+        "statement": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+        "difficulty": "Medium",
+        "category": "Array, Matrix",
+        "tags": ["array", "matrix", "simulation"]
+    },
+    "Set Matrix Zeroes": {
+        "statement": "Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's. You must do it in place.",
+        "difficulty": "Medium",
+        "category": "Array, Matrix",
+        "tags": ["array", "matrix", "in-place"]
+    },
+    "Game of Life": {
+        "statement": "According to Wikipedia's article: 'The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.' The board is made up of an m x n grid of cells, where each cell has an initial state: live (represented by a 1) or dead (represented by a 0).",
+        "difficulty": "Medium",
+        "category": "Array, Matrix",
+        "tags": ["array", "matrix", "simulation"]
+    },
+    "Word Search": {
+        "statement": "Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+        "difficulty": "Medium",
+        "category": "Array, Backtracking",
+        "tags": ["array", "backtracking", "dfs"]
+    },
+    "Number of Islands": {
+        "statement": "Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+        "difficulty": "Medium",
+        "category": "Array, Depth-First Search",
+        "tags": ["array", "dfs", "flood-fill"]
+    },
+    "Surrounded Regions": {
+        "statement": "Given an m x n matrix board containing 'X' and 'O', capture all regions that are 4-directionally surrounded by 'X'. A region is captured by flipping all 'O's into 'X's in that surrounded region.",
+        "difficulty": "Medium",
+        "category": "Array, Depth-First Search",
+        "tags": ["array", "dfs", "boundary"]
+    },
+    
+    # Advanced String Problems
+    "Regular Expression Matching": {
+        "statement": "Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where '.' matches any single character and '*' matches zero or more of the preceding element.",
+        "difficulty": "Hard",
+        "category": "String, Dynamic Programming",
+        "tags": ["string", "dp", "regex", "matching"]
+    },
+    "Wildcard Matching": {
+        "statement": "Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where '?' matches any single character and '*' matches any sequence of characters (including the empty sequence).",
+        "difficulty": "Hard",
+        "category": "String, Dynamic Programming",
+        "tags": ["string", "dp", "wildcard", "matching"]
+    },
+    "Longest Valid Parentheses": {
+        "statement": "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+        "difficulty": "Hard",
+        "category": "String, Dynamic Programming",
+        "tags": ["string", "dp", "parentheses", "stack"]
+    },
+    "Minimum Window Substring": {
+        "statement": "Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string ''.",
+        "difficulty": "Hard",
+        "category": "String, Sliding Window",
+        "tags": ["string", "sliding-window", "hash-table"]
+    },
+    "Substring with Concatenation of All Words": {
+        "statement": "You are given a string s and an array of strings words. All the strings of words are of the same length. A concatenated substring in s is a substring that contains all the strings of any permutation of words concatenated.",
+        "difficulty": "Hard",
+        "category": "String, Hash Table",
+        "tags": ["string", "hash-table", "sliding-window"]
+    },
+    "Text Justification": {
+        "statement": "Given an array of strings words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified.",
+        "difficulty": "Hard",
+        "category": "String, Greedy",
+        "tags": ["string", "greedy", "text-formatting"]
+    },
+    "Word Break": {
+        "statement": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. Note that the same word in the dictionary may be reused multiple times in the segmentation.",
+        "difficulty": "Medium",
+        "category": "String, Dynamic Programming",
+        "tags": ["string", "dp", "segmentation"]
+    },
+    "Word Break II": {
+        "statement": "Given a string s and a dictionary of strings wordDict, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences in any order.",
+        "difficulty": "Hard",
+        "category": "String, Backtracking",
+        "tags": ["string", "backtracking", "dp"]
+    },
+    "Palindrome Partitioning": {
+        "statement": "Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s.",
+        "difficulty": "Medium",
+        "category": "String, Backtracking",
+        "tags": ["string", "backtracking", "palindrome"]
+    },
+    "Palindrome Partitioning II": {
+        "statement": "Given a string s, partition s such that every substring of the partition is a palindrome. Return the minimum cuts needed for a palindrome partitioning of s.",
+        "difficulty": "Hard",
+        "category": "String, Dynamic Programming",
+        "tags": ["string", "dp", "palindrome"]
+    },
+    
+    # Advanced Dynamic Programming Problems
+    "Longest Increasing Subsequence": {
+        "statement": "Given an integer array nums, return the length of the longest strictly increasing subsequence. A subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Binary Search",
+        "tags": ["dp", "binary-search", "subsequence"]
+    },
+    "Longest Common Subsequence": {
+        "statement": "Given two strings text1 and text2, return the length of their longest common subsequence. If there is no common subsequence, return 0. A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, String",
+        "tags": ["dp", "string", "lcs"]
+    },
+    "Edit Distance": {
+        "statement": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You have the following three operations permitted on a word: Insert a character, Delete a character, Replace a character.",
+        "difficulty": "Hard",
+        "category": "Dynamic Programming, String",
+        "tags": ["dp", "string", "edit-distance"]
+    },
+    "Distinct Subsequences": {
+        "statement": "Given two strings s and t, return the number of distinct subsequences of s which equals t. A subsequence of a string is a new string formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters.",
+        "difficulty": "Hard",
+        "category": "Dynamic Programming, String",
+        "tags": ["dp", "string", "subsequence"]
+    },
+    "Interleaving String": {
+        "statement": "Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2. An interleaving of two strings s and t is a configuration where they are divided into non-empty substrings such that: s = s1 + s2 + ... + sn, t = t1 + t2 + ... + tm, |n - m| <= 1, The interleaving is s1 + t1 + s2 + t2 + s3 + t3 + ... or t1 + s1 + t2 + s2 + t3 + s3 + ...",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, String",
+        "tags": ["dp", "string", "interleaving"]
+    },
+    "Scramble String": {
+        "statement": "We can scramble a string s to get a string t using the following algorithm: If the length of the string is 1, stop. If the length of the string is > 1, do the following: Split the string into two non-empty substrings at a random index, i.e., if the string is s, divide it to x and y where s = x + y. Randomly decide to swap the two substrings or to keep them in the same order. i.e., after this step, s may become s = x + y or s = y + x. Apply step 1 recursively on each of the two substrings x and y. Given two strings s1 and s2 of the same length, return true if s2 is a scrambled string of s1, otherwise, return false.",
+        "difficulty": "Hard",
+        "category": "Dynamic Programming, String",
+        "tags": ["dp", "string", "scramble"]
+    },
+    "Decode Ways": {
+        "statement": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> '1', 'B' -> '2', ..., 'Z' -> '26'. To decode an encoded message, all the digits must be grouped then mapped back into letters using the reverse of the mapping above (there may be multiple ways). For example, '11106' can be mapped into: 'AAJF' with the grouping (1 1 10 6), 'KJF' with the grouping (11 10 6). Note that the grouping (1 11 06) is invalid because '06' cannot be mapped into 'F' since '6' is different from '06'. Given a string s containing only digits, return the number of ways to decode it.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, String",
+        "tags": ["dp", "string", "decoding"]
+    },
+    "Unique Paths": {
+        "statement": "There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time. Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Math",
+        "tags": ["dp", "math", "combinatorics"]
+    },
+    "Unique Paths II": {
+        "statement": "You are given an m x n integer array obstacleGrid. There is a robot initially located at the top-left corner (i.e., obstacleGrid[0][0]). The robot tries to move to the bottom-right corner (i.e., obstacleGrid[m - 1][n - 1]). The robot can only move either down or right at any point in time. An obstacle and space are marked as 1 or 0 respectively in obstacleGrid. A path that the robot takes cannot include any square that is an obstacle. Return the number of possible unique paths that the robot can take to reach the bottom-right corner.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "obstacles"]
+    },
+    "Minimum Path Sum": {
+        "statement": "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path. Note: You can only move either down or right at any point in time.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "min-path"]
+    },
+    
+    # Advanced Tree Problems
+    "Binary Tree Maximum Path Sum": {
+        "statement": "A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them. A node can only appear in the sequence at most once. Note that the path does not need to pass through the root. The path sum of a path is the sum of the node's values in the path. Given the root of a binary tree, return the maximum path sum of any non-empty path.",
+        "difficulty": "Hard",
+        "category": "Tree, Dynamic Programming",
+        "tags": ["tree", "dp", "dfs", "path-sum"]
+    },
+    "Serialize and Deserialize Binary Tree": {
+        "statement": "Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.",
+        "difficulty": "Hard",
+        "category": "Tree, Design",
+        "tags": ["tree", "design", "serialization", "bfs"]
+    },
+    "Binary Tree Right Side View": {
+        "statement": "Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.",
+        "difficulty": "Medium",
+        "category": "Tree, Breadth-First Search",
+        "tags": ["tree", "bfs", "right-view"]
+    },
+    "Count Complete Tree Nodes": {
+        "statement": "Given the root of a complete binary tree, return the number of the nodes in the tree. In a complete binary tree, every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. It can have between 1 and 2h nodes inclusive at the last level h.",
+        "difficulty": "Medium",
+        "category": "Tree, Binary Search",
+        "tags": ["tree", "binary-search", "complete-tree"]
+    },
+    "Path Sum III": {
+        "statement": "Given the root of a binary tree and an integer targetSum, return the number of paths where the sum of the values along the path equals targetSum. The path does not need to start or end at the root or a leaf, but it must go downwards (i.e., traveling only from parent nodes to child nodes).",
+        "difficulty": "Medium",
+        "category": "Tree, Hash Table",
+        "tags": ["tree", "hash-table", "prefix-sum"]
+    },
+    
+    # Advanced Graph Problems
+    "Course Schedule": {
+        "statement": "There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai. Return true if you can finish all courses. Otherwise, return false.",
+        "difficulty": "Medium",
+        "category": "Graph, Topological Sort",
+        "tags": ["graph", "topological-sort", "dfs", "cycle-detection"]
+    },
+    "Course Schedule II": {
+        "statement": "There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai. Return the ordering of courses you should take to finish all courses. If there are many valid answers, return any of them. If it is impossible to finish all courses, return an empty array.",
+        "difficulty": "Medium",
+        "category": "Graph, Topological Sort",
+        "tags": ["graph", "topological-sort", "bfs", "ordering"]
+    },
+    "Clone Graph": {
+        "statement": "Given a reference of a node in a connected undirected graph. Return a deep copy (clone) of the graph. Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.",
+        "difficulty": "Medium",
+        "category": "Graph, Depth-First Search",
+        "tags": ["tree", "dfs", "clone", "hash-table"]
+    },
+    "Pacific Atlantic Water Flow": {
+        "statement": "There is an m x n rectangular island that borders both the Pacific Ocean and Atlantic Ocean. The Pacific Ocean touches the island's left and top edges, and the Atlantic Ocean touches the island's right and bottom edges. The island receives a lot of rain, and the rain water can flow to neighboring cells directly north, south, east, and west if the neighboring cell's height is less than or equal to the current cell's height. Water can flow from any cell adjacent to an ocean into the ocean. Return a 2D list of grid coordinates result where result[i] = [ri, ci] denotes that rain water can flow from cell (ri, ci) to both the Pacific and Atlantic oceans.",
+        "difficulty": "Medium",
+        "category": "Graph, Depth-First Search",
+        "tags": ["graph", "dfs", "ocean-flow", "multi-source"]
+    },
+    "Redundant Connection": {
+        "statement": "In this problem, a tree is an undirected graph that is connected and has no cycles. You are given a graph that started as a tree with n nodes labeled from 1 to n, with one additional edge added. The added edge has two different vertices chosen from 1 to n, and was not an edge that already existed. The graph is represented as an array edges of length n where edges[i] = [ai, bi] indicates that there is an edge between nodes ai and bi in the graph. Return an edge that can be removed so that the resulting graph is a tree of n nodes. If there are multiple answers, return the answer that occurs last in the input.",
+        "difficulty": "Medium",
+        "category": "Graph, Union Find",
+        "tags": ["graph", "union-find", "cycle-detection", "disjoint-set"]
+    },
+    
+    # Advanced Backtracking Problems
+    "N-Queens": {
+        "statement": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order. Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively.",
+        "difficulty": "Hard",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "n-queens", "chess"]
+    },
+    "Sudoku Solver": {
+        "statement": "Write a program to solve a Sudoku puzzle by filling the empty cells. A sudoku solution must satisfy all of the following rules: Each of the digits 1-9 must occur exactly once in each row. Each of the digits 1-9 must occur exactly once in each column. Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid. The '.' character indicates empty cells.",
+        "difficulty": "Hard",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "sudoku", "constraint-satisfaction"]
+    },
+    "Word Search II": {
+        "statement": "Given an m x n board of characters and a list of strings words, return all words on the board. Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.",
+        "difficulty": "Hard",
+        "category": "Backtracking, Trie",
+        "tags": ["backtracking", "trie", "dfs", "word-search"]
+    },
+    "Combination Sum": {
+        "statement": "Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.",
+        "difficulty": "Medium",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "combination", "sum"]
+    },
+    "Combination Sum II": {
+        "statement": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may only be used once in the combination. Note: The solution set must not contain duplicate combinations.",
+        "difficulty": "Medium",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "combination", "sum", "unique"]
+    },
+    
+    # Advanced Heap Problems
+    "Top K Frequent Elements": {
+        "statement": "Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.",
+        "difficulty": "Medium",
+        "category": "Heap, Hash Table",
+        "tags": ["dp", "hash-table", "frequency", "top-k"]
+    },
+    "Find Median from Data Stream": {
+        "statement": "The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value and the median is the mean of the two middle values. Implement the MedianFinder class: MedianFinder() initializes the MedianFinder object. void addNum(int num) adds the integer num from the data stream to the data structure. double findMedian() returns the median of all elements so far.",
+        "difficulty": "Hard",
+        "category": "Heap, Design",
+        "tags": ["heap", "design", "median", "two-heaps"]
+    },
+    "Merge k Sorted Lists": {
+        "statement": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it.",
+        "difficulty": "Hard",
+        "category": "Heap, Linked List",
+        "tags": ["heap", "linked-list", "merge", "priority-queue"]
+    },
+    "Kth Largest Element in an Array": {
+        "statement": "Given an integer array nums and an integer k, return the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element.",
+        "difficulty": "Medium",
+        "category": "Heap, Array",
+        "tags": ["heap", "array", "kth-largest", "quick-select"]
+    },
+    "Sliding Window Median": {
+        "statement": "The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value and the median is the mean of the two middle values. For example, for arr = [2,3,4], the median is 3. For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5. Given an integer array nums and an integer k, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the median array for each window in the original array.",
+        "difficulty": "Hard",
+        "category": "Heap, Sliding Window",
+        "tags": ["heap", "sliding-window", "median", "two-heaps"]
+    },
+    
+    # Bit Manipulation Problems
+    "Single Number": {
+        "statement": "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one. You must implement a solution with a linear runtime complexity and use only constant extra space.",
+        "difficulty": "Easy",
+        "category": "Array, Bit Manipulation",
+        "tags": ["array", "bit-manipulation", "xor"]
+    },
+    "Single Number II": {
+        "statement": "Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it. You must implement a solution with a linear runtime complexity and use only constant extra space.",
+        "difficulty": "Medium",
+        "category": "Array, Bit Manipulation",
+        "tags": ["array", "bit-manipulation", "counting"]
+    },
+    "Single Number III": {
+        "statement": "Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order. You must write an algorithm that runs in linear runtime complexity and uses only constant extra space.",
+        "difficulty": "Medium",
+        "category": "Array, Bit Manipulation",
+        "tags": ["array", "bit-manipulation", "xor", "two-numbers"]
+    },
+    "Power of Two": {
+        "statement": "Given an integer n, return true if it is a power of two. Otherwise, return false. An integer n is a power of two, if there exists an integer x such that n == 2x.",
+        "difficulty": "Easy",
+        "category": "Math, Bit Manipulation",
+        "tags": ["math", "bit-manipulation", "power"]
+    },
+    "Counting Bits": {
+        "statement": "Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.",
+        "difficulty": "Easy",
+        "category": "Dynamic Programming, Bit Manipulation",
+        "tags": ["dp", "bit-manipulation", "counting"]
+    },
+    
+    # Math Problems
+    "Happy Number": {
+        "statement": "Write an algorithm to determine if a number n is happy. A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits. Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy.",
+        "difficulty": "Easy",
+        "category": "Math, Hash Table",
+        "tags": ["math", "hash-table", "cycle-detection"]
+    },
+    "Ugly Number": {
+        "statement": "An ugly number is a positive integer whose prime factors are limited to 2, 3, and 5. Given an integer n, return true if n is an ugly number.",
+        "difficulty": "Easy",
+        "category": "Math",
+        "tags": ["math", "prime-factors", "divisibility"]
+    },
+    "Ugly Number II": {
+        "statement": "An ugly number is a positive integer whose prime factors are limited to 2, 3, and 5. Given an integer n, return the nth ugly number.",
+        "difficulty": "Medium",
+        "category": "Math, Dynamic Programming",
+        "tags": ["math", "dp", "ugly-numbers", "pointers"]
+    },
+    "Super Ugly Number": {
+        "statement": "A super ugly number is a positive integer whose prime factors are in the array primes. Given an integer n and an array of integers primes, return the nth super ugly number. The nth super ugly number is guaranteed to fit in a 32-bit signed integer.",
+        "difficulty": "Medium",
+        "category": "Math, Dynamic Programming",
+        "tags": ["math", "dp", "ugly-numbers", "primes"]
+    },
+    "Perfect Squares": {
+        "statement": "Given an integer n, return the least number of perfect square numbers that sum to n. A perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself. For example, 1, 4, 9, and 16 are perfect squares while 3 and 11 are not.",
+        "difficulty": "Medium",
+        "category": "Math, Dynamic Programming",
+        "tags": ["math", "dp", "perfect-squares", "lagrange"]
+    },
+    
+    # Advanced Linked List Problems
+    "Reverse Nodes in k-Group": {
+        "statement": "Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is. You may not alter the values in the list's nodes, only nodes themselves may be changed.",
+        "difficulty": "Hard",
+        "category": "Linked List, Recursion",
+        "tags": ["linked-list", "recursion", "reverse", "k-group"]
+    },
+    "Copy List with Random Pointer": {
+        "statement": "A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list, or null. Construct a deep copy of the list. The deep copy should consist of exactly n brand new nodes, where each new node has its value set to the value of its corresponding original node. Both the next and random pointer of the new nodes should point to new nodes in the copied list such that the pointer values in the original list and copied list represent the same list state. None of the pointer values in the copied list should point to nodes in the original list.",
+        "difficulty": "Medium",
+        "category": "Linked List, Hash Table",
+        "tags": ["linked-list", "hash-table", "copy", "random-pointer"]
+    },
+    "Reorder List": {
+        "statement": "You are given the head of a singly linked-list. The list can be represented as: L0 → L1 → … → Ln - 1 → Ln. Reorder the list to be on the following form: L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → … You may not modify the values in the list's nodes. Only nodes themselves may be changed.",
+        "difficulty": "Medium",
+        "category": "Linked List, Two Pointers",
+        "tags": ["linked-list", "two-pointers", "reorder", "middle"]
+    },
+    "Sort List": {
+        "statement": "Given the head of a linked list, return the list after sorting it in ascending order.",
+        "difficulty": "Medium",
+        "category": "Linked List, Sorting",
+        "tags": ["linked-list", "sorting", "merge-sort", "divide-conquer"]
+    },
+    "Insertion Sort List": {
+        "statement": "Given the head of a singly linked list, sort the list using insertion sort, and return the sorted list's head. The steps of the insertion sort algorithm: Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.",
+        "difficulty": "Medium",
+        "category": "Linked List, Sorting",
+        "tags": ["linked-list", "sorting", "insertion-sort"]
     }
 }
 
