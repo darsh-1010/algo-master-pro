@@ -772,6 +772,382 @@ DSA_PROBLEMS = {
         "difficulty": "Medium",
         "category": "Linked List, Sorting",
         "tags": ["linked-list", "sorting", "insertion-sort"]
+    },
+    
+    # FAANG Favorite Array Problems
+    "Trapping Rain Water": {
+        "statement": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.",
+        "difficulty": "Hard",
+        "category": "Array, Two Pointers",
+        "tags": ["array", "two-pointers", "stack", "water-trap", "faang-favorite"]
+    },
+    "Container With Most Water": {
+        "statement": "Given n non-negative integers height where each represents a point at coordinate (i, height[i]), find two lines that together with the x-axis form a container that would hold the maximum amount of water.",
+        "difficulty": "Medium",
+        "category": "Array, Two Pointers",
+        "tags": ["array", "two-pointers", "greedy", "faang-favorite"]
+    },
+    "3Sum": {
+        "statement": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+        "difficulty": "Medium",
+        "category": "Array, Two Pointers",
+        "tags": ["array", "two-pointers", "sorting", "faang-favorite"]
+    },
+    "4Sum": {
+        "statement": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that: 0 <= a, b, c, d < n, a, b, c, and d are distinct, nums[a] + nums[b] + nums[c] + nums[d] == target.",
+        "difficulty": "Medium",
+        "category": "Array, Two Pointers",
+        "tags": ["array", "two-pointers", "sorting", "faang-favorite"]
+    },
+    "Next Permutation": {
+        "statement": "Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such an arrangement is not possible, it must rearrange it as the lowest possible order (i.e., sorted in ascending order).",
+        "difficulty": "Medium",
+        "category": "Array, Two Pointers",
+        "tags": ["array", "two-pointers", "permutation", "faang-favorite"]
+    },
+    "First Missing Positive": {
+        "statement": "Given an unsorted integer array nums, return the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses constant extra space.",
+        "difficulty": "Hard",
+        "category": "Array, Hash Table",
+        "tags": ["array", "hash-table", "in-place", "faang-favorite"]
+    },
+    "Product of Array Except Self": {
+        "statement": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must write an algorithm that runs in O(n) time and without using the division operation.",
+        "difficulty": "Medium",
+        "category": "Array, Prefix Sum",
+        "tags": ["array", "prefix-sum", "faang-favorite"]
+    },
+    "Maximum Subarray": {
+        "statement": "Given an integer array nums, find the subarray with the largest sum, and return its sum.",
+        "difficulty": "Medium",
+        "category": "Array, Dynamic Programming",
+        "tags": ["array", "dp", "kadane", "faang-favorite"]
+    },
+    "Best Time to Buy and Sell Stock": {
+        "statement": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+        "difficulty": "Easy",
+        "category": "Array, Dynamic Programming",
+        "tags": ["array", "dp", "greedy", "faang-favorite"]
+    },
+    "Best Time to Buy and Sell Stock II": {
+        "statement": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day. Find and return the maximum profit you can achieve.",
+        "difficulty": "Medium",
+        "category": "Array, Dynamic Programming",
+        "tags": ["array", "dp", "greedy", "faang-favorite"]
+    },
+    "Best Time to Buy and Sell Stock III": {
+        "statement": "You are given an array prices where prices[i] is the price of a given stock on the ith day. Find the maximum profit you can achieve. You may complete at most two transactions. Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).",
+        "difficulty": "Hard",
+        "category": "Array, Dynamic Programming",
+        "tags": ["array", "dp", "state-machine", "faang-favorite"]
+    },
+    
+    # FAANG Favorite String Problems
+    "Valid Parentheses": {
+        "statement": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type.",
+        "difficulty": "Easy",
+        "category": "String, Stack",
+        "tags": ["string", "stack", "faang-favorite"]
+    },
+    "Valid Anagram": {
+        "statement": "Given two strings s and t, return true if t is an anagram of s, and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+        "difficulty": "Easy",
+        "category": "String, Hash Table",
+        "tags": ["string", "hash-table", "faang-favorite"]
+    },
+    "Group Anagrams": {
+        "statement": "Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+        "difficulty": "Medium",
+        "category": "String, Hash Table",
+        "tags": ["string", "hash-table", "sorting", "faang-favorite"]
+    },
+    "Longest Substring Without Repeating Characters": {
+        "statement": "Given a string s, find the length of the longest substring without repeating characters.",
+        "difficulty": "Medium",
+        "category": "String, Sliding Window",
+        "tags": ["string", "sliding-window", "hash-table", "faang-favorite"]
+    },
+    "Longest Palindromic Substring": {
+        "statement": "Given a string s, return the longest palindromic substring in s.",
+        "difficulty": "Medium",
+        "category": "String, Dynamic Programming",
+        "tags": ["string", "dp", "palindrome", "faang-favorite"]
+    },
+    "Zigzag Conversion": {
+        "statement": "The string 'PAYPALISHIRING' is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility). P   A   H   N, A P L S I I G, Y   I   R. And then read line by line: 'PAHNAPLSIIGYIR'. Write the code that will take a string and make this conversion given a number of rows.",
+        "difficulty": "Medium",
+        "category": "String, Simulation",
+        "tags": ["string", "simulation", "faang-favorite"]
+    },
+    "Integer to Roman": {
+        "statement": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Given an integer, convert it to a roman numeral.",
+        "difficulty": "Medium",
+        "category": "String, Math",
+        "tags": ["string", "math", "roman", "faang-favorite"]
+    },
+    "Roman to Integer": {
+        "statement": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Given a roman numeral, convert it to an integer.",
+        "difficulty": "Easy",
+        "category": "String, Math",
+        "tags": ["string", "math", "roman", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Tree Problems
+    "Validate Binary Search Tree": {
+        "statement": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A valid BST is defined as follows: The left subtree of a node contains only nodes with keys less than the node's key. The right subtree of a node contains only nodes with keys greater than the node's key. Both the left and right subtrees must also be binary search trees.",
+        "difficulty": "Medium",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "bst", "faang-favorite"]
+    },
+    "Binary Tree Level Order Traversal": {
+        "statement": "Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).",
+        "difficulty": "Medium",
+        "category": "Tree, Breadth-First Search",
+        "tags": ["tree", "bfs", "level-order", "faang-favorite"]
+    },
+    "Binary Tree Inorder Traversal": {
+        "statement": "Given the root of a binary tree, return the inorder traversal of its nodes' values.",
+        "difficulty": "Easy",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "inorder", "faang-favorite"]
+    },
+    "Binary Tree Preorder Traversal": {
+        "statement": "Given the root of a binary tree, return the preorder traversal of its nodes' values.",
+        "difficulty": "Easy",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "preorder", "faang-favorite"]
+    },
+    "Binary Tree Postorder Traversal": {
+        "statement": "Given the root of a binary tree, return the postorder traversal of its nodes' values.",
+        "difficulty": "Easy",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "postorder", "faang-favorite"]
+    },
+    "Symmetric Tree": {
+        "statement": "Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).",
+        "difficulty": "Easy",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "symmetric", "faang-favorite"]
+    },
+    "Same Tree": {
+        "statement": "Given the roots of two binary trees p and q, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.",
+        "difficulty": "Easy",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "comparison", "faang-favorite"]
+    },
+    "Subtree of Another Tree": {
+        "statement": "Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise. A subtree of a binary tree tree is a tree that consists of a node in tree and all of this node's descendants. The tree tree could also be considered as a subtree of itself.",
+        "difficulty": "Easy",
+        "category": "Tree, Depth-First Search",
+        "tags": ["tree", "dfs", "subtree", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Graph Problems
+    "Number of Connected Components in an Undirected Graph": {
+        "statement": "You have a graph of n nodes. You are given an integer n and an array edges where edges[i] = [ai, bi] indicates that there is an edge between ai and bi in the graph. Return the number of connected components in the graph.",
+        "difficulty": "Medium",
+        "category": "Graph, Depth-First Search",
+        "tags": ["graph", "dfs", "connected-components", "faang-favorite"]
+    },
+    "Graph Valid Tree": {
+        "statement": "Given n nodes labeled from 0 to n-1 and a list of undirected edges (each edge is a pair of nodes), write a function to check whether these edges make up a valid tree.",
+        "difficulty": "Medium",
+        "category": "Graph, Union Find",
+        "tags": ["graph", "union-find", "tree-validation", "faang-favorite"]
+    },
+    "Alien Dictionary": {
+        "statement": "There is a new alien language that uses the English alphabet. However, the order among the letters is unknown to you. You are given a list of strings words from the alien language's dictionary, where the strings in words are sorted lexicographically by the rules of this new language. Return a string of the unique letters in the new alien language sorted in lexicographically increasing order by the new language's rules. If there is no solution, return ''. If there are multiple solutions, return any of them.",
+        "difficulty": "Hard",
+        "category": "Graph, Topological Sort",
+        "tags": ["graph", "topological-sort", "alien", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Dynamic Programming Problems
+    "Climbing Stairs": {
+        "statement": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+        "difficulty": "Easy",
+        "category": "Dynamic Programming, Math",
+        "tags": ["dp", "math", "fibonacci", "faang-favorite"]
+    },
+    "House Robber": {
+        "statement": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the value of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "robbery", "faang-favorite"]
+    },
+    "House Robber II": {
+        "statement": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the value of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "robbery", "circular", "faang-favorite"]
+    },
+    "Coin Change": {
+        "statement": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite number of each kind of coin.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "coin-change", "faang-favorite"]
+    },
+    "Coin Change II": {
+        "statement": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the number of combinations that make up that amount. If that amount of money cannot be made up by any combination of the coins, return 0. You may assume that you have an infinite number of each kind of coin.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "coin-change", "combinations", "faang-favorite"]
+    },
+    "Target Sum": {
+        "statement": "You are given an integer array nums and an integer target. You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers. For example, if nums = [2, 1], you can add a '+' before 2 and a '-' before 1 and concatenate them to build the expression '+2-1'. Return the number of different expressions that you can build, which evaluates to target.",
+        "difficulty": "Medium",
+        "category": "Dynamic Programming, Array",
+        "tags": ["dp", "array", "target-sum", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Backtracking Problems
+    "Letter Combinations of a Phone Number": {
+        "statement": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order. A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.",
+        "difficulty": "Medium",
+        "category": "Backtracking, String",
+        "tags": ["backtracking", "string", "phone", "faang-favorite"]
+    },
+    "Generate Parentheses": {
+        "statement": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+        "difficulty": "Medium",
+        "category": "Backtracking, String",
+        "tags": ["backtracking", "string", "parentheses", "faang-favorite"]
+    },
+    "Permutations": {
+        "statement": "Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.",
+        "difficulty": "Medium",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "permutations", "faang-favorite"]
+    },
+    "Permutations II": {
+        "statement": "Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.",
+        "difficulty": "Medium",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "permutations", "duplicates", "faang-favorite"]
+    },
+    "Subsets": {
+        "statement": "Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.",
+        "difficulty": "Medium",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "subsets", "faang-favorite"]
+    },
+    "Subsets II": {
+        "statement": "Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.",
+        "difficulty": "Medium",
+        "category": "Backtracking, Array",
+        "tags": ["backtracking", "array", "subsets", "duplicates", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Heap Problems
+    "Kth Smallest Element in a Sorted Matrix": {
+        "statement": "Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element.",
+        "difficulty": "Medium",
+        "category": "Heap, Binary Search",
+        "tags": ["heap", "binary-search", "matrix", "faang-favorite"]
+    },
+    "Find K Pairs with Smallest Sums": {
+        "statement": "You are given two integer arrays nums1 and nums2 sorted in ascending order and an integer k. Define a pair (u, v) which consists of one element from the first array and one element from the second array. Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.",
+        "difficulty": "Medium",
+        "category": "Heap, Array",
+        "tags": ["heap", "array", "k-pairs", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Math Problems
+    "Pow(x, n)": {
+        "statement": "Implement pow(x, n), which calculates x raised to the power n (i.e., xn).",
+        "difficulty": "Medium",
+        "category": "Math, Recursion",
+        "tags": ["math", "recursion", "power", "faang-favorite"]
+    },
+    "Sqrt(x)": {
+        "statement": "Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well. You must not use any built-in exponent function or operator.",
+        "difficulty": "Easy",
+        "category": "Math, Binary Search",
+        "tags": ["math", "binary-search", "sqrt", "faang-favorite"]
+    },
+    "Divide Two Integers": {
+        "statement": "Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator. The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.",
+        "difficulty": "Medium",
+        "category": "Math, Bit Manipulation",
+        "tags": ["math", "bit-manipulation", "division", "faang-favorite"]
+    },
+    "Multiply Strings": {
+        "statement": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string. Note: You must not use any built-in BigInteger library or convert the inputs to integer directly.",
+        "difficulty": "Medium",
+        "category": "Math, String",
+        "tags": ["math", "string", "multiplication", "faang-favorite"]
+    },
+    
+    # FAANG Favorite Linked List Problems
+    "Add Two Numbers": {
+        "statement": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+        "difficulty": "Medium",
+        "category": "Linked List, Math",
+        "tags": ["linked-list", "math", "addition", "faang-favorite"]
+    },
+    "Add Two Numbers II": {
+        "statement": "You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+        "difficulty": "Medium",
+        "category": "Linked List, Math",
+        "tags": ["linked-list", "math", "addition", "reverse", "faang-favorite"]
+    },
+    "Remove Nth Node From End of List": {
+        "statement": "Given the head of a linked list, remove the nth node from the end of the list and return its head.",
+        "difficulty": "Medium",
+        "category": "Linked List, Two Pointers",
+        "tags": ["linked-list", "two-pointers", "faang-favorite"]
+    },
+    "Swap Nodes in Pairs": {
+        "statement": "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed).",
+        "difficulty": "Medium",
+        "category": "Linked List, Recursion",
+        "tags": ["linked-list", "recursion", "swap", "faang-favorite"]
+    },
+    "Rotate List": {
+        "statement": "Given the head of a linked list, rotate the list to the right by k places.",
+        "difficulty": "Medium",
+        "category": "Linked List, Two Pointers",
+        "tags": ["linked-list", "two-pointers", "rotation", "faang-favorite"]
+    },
+    
+    # Advanced Matrix Problems
+    "Search a 2D Matrix": {
+        "statement": "Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties: Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row.",
+        "difficulty": "Medium",
+        "category": "Array, Binary Search",
+        "tags": ["array", "binary-search", "matrix", "faang-favorite"]
+    },
+    "Search a 2D Matrix II": {
+        "statement": "Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties: Integers in each row are sorted in ascending from left to right. Integers in each column are sorted in ascending from top to bottom.",
+        "difficulty": "Medium",
+        "category": "Array, Binary Search",
+        "tags": ["array", "binary-search", "matrix", "faang-favorite"]
+    },
+    "Kth Smallest Element in a Sorted Matrix": {
+        "statement": "Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element.",
+        "difficulty": "Medium",
+        "category": "Heap, Binary Search",
+        "tags": ["heap", "binary-search", "matrix", "faang-favorite"]
+    },
+    
+    # Advanced Sliding Window Problems
+    "Longest Substring with At Most K Distinct Characters": {
+        "statement": "Given a string s and an integer k, return the length of the longest substring of s that contains at most k distinct characters.",
+        "difficulty": "Medium",
+        "category": "String, Sliding Window",
+        "tags": ["string", "sliding-window", "hash-table", "faang-favorite"]
+    },
+    "Longest Substring with At Most Two Distinct Characters": {
+        "statement": "Given a string s, return the length of the longest substring that contains at most two distinct characters.",
+        "difficulty": "Medium",
+        "category": "String, Sliding Window",
+        "tags": ["string", "sliding-window", "hash-table", "faang-favorite"]
+    },
+    "Subarrays with K Different Integers": {
+        "statement": "Given an integer array nums and an integer k, return the number of good subarrays of nums. A good array is an array where the number of different integers in that array is exactly k. For example, [1,2,3,1,2] has 3 different integers: 1, 2, and 3. A subarray is a contiguous part of an array.",
+        "difficulty": "Hard",
+        "category": "Array, Sliding Window",
+        "tags": ["array", "sliding-window", "hash-table", "faang-favorite"]
     }
 }
 
