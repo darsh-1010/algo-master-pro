@@ -19,7 +19,10 @@ DSA_PROBLEMS = {
         "statement": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.",
         "difficulty": "Easy",
         "category": "Array, Hash Table",
-        "tags": ["array", "hash-table", "two-pointers"]
+        "tags": ["array", "hash-table", "two-pointers"],
+        "companies": ["Google", "Amazon", "Microsoft", "Apple", "Meta", "Uber", "Netflix"],
+        "popularity": 95,
+        "user_rating": 4.8
     },
     "Best Time to Buy and Sell Stock": {
         "statement": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
@@ -779,7 +782,10 @@ DSA_PROBLEMS = {
         "statement": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.",
         "difficulty": "Hard",
         "category": "Array, Two Pointers",
-        "tags": ["array", "two-pointers", "stack", "water-trap", "faang-favorite"]
+        "tags": ["array", "two-pointers", "stack", "water-trap", "faang-favorite"],
+        "companies": ["Google", "Amazon", "Microsoft", "Meta", "Apple", "Bloomberg", "Uber"],
+        "popularity": 88,
+        "user_rating": 4.5
     },
     "Container With Most Water": {
         "statement": "Given n non-negative integers height where each represents a point at coordinate (i, height[i]), find two lines that together with the x-axis form a container that would hold the maximum amount of water.",
@@ -791,7 +797,10 @@ DSA_PROBLEMS = {
         "statement": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
         "difficulty": "Medium",
         "category": "Array, Two Pointers",
-        "tags": ["array", "two-pointers", "sorting", "faang-favorite"]
+        "tags": ["array", "two-pointers", "sorting", "faang-favorite"],
+        "companies": ["Google", "Amazon", "Microsoft", "Meta", "Apple", "Uber", "Airbnb", "LinkedIn"],
+        "popularity": 85,
+        "user_rating": 4.4
     },
     "4Sum": {
         "statement": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that: 0 <= a, b, c, d < n, a, b, c, and d are distinct, nums[a] + nums[b] + nums[c] + nums[d] == target.",
@@ -827,7 +836,10 @@ DSA_PROBLEMS = {
         "statement": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
         "difficulty": "Easy",
         "category": "Array, Dynamic Programming",
-        "tags": ["array", "dp", "greedy", "faang-favorite"]
+        "tags": ["array", "dp", "greedy", "faang-favorite"],
+        "companies": ["Amazon", "Google", "Microsoft", "Meta", "Apple", "Bloomberg", "Goldman Sachs"],
+        "popularity": 92,
+        "user_rating": 4.7
     },
     "Best Time to Buy and Sell Stock II": {
         "statement": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day. Find and return the maximum profit you can achieve.",
@@ -847,7 +859,10 @@ DSA_PROBLEMS = {
         "statement": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type.",
         "difficulty": "Easy",
         "category": "String, Stack",
-        "tags": ["string", "stack", "faang-favorite"]
+        "tags": ["string", "stack", "faang-favorite"],
+        "companies": ["Google", "Amazon", "Microsoft", "Meta", "Apple", "Uber", "Airbnb"],
+        "popularity": 89,
+        "user_rating": 4.6
     },
     "Valid Anagram": {
         "statement": "Given two strings s and t, return true if t is an anagram of s, and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
@@ -1277,6 +1292,241 @@ def get_available_difficulties():
     for details in DSA_PROBLEMS.values():
         difficulties.add(details['difficulty'])
     return jsonify(list(difficulties))
+
+@app.route('/get_available_companies')
+def get_available_companies():
+    companies = set()
+    for details in DSA_PROBLEMS.values():
+        if 'companies' in details:
+            companies.update(details['companies'])
+    return jsonify(list(companies))
+
+@app.route('/get_available_tags')
+def get_available_tags():
+    tags = set()
+    for details in DSA_PROBLEMS.values():
+        tags.update(details['tags'])
+    return jsonify(list(tags))
+
+@app.route('/filter_problems')
+def filter_problems():
+    # Get filter parameters
+    difficulty = request.args.get('difficulty', 'all')
+    category = request.args.get('category', 'all')
+    company = request.args.get('company', 'all')
+    tags = request.args.get('tags', '').split(',') if request.args.get('tags') else []
+    min_rating = float(request.args.get('min_rating', 0))
+    min_popularity = int(request.args.get('min_popularity', 0))
+    sort_by = request.args.get('sort_by', 'name')  # name, difficulty, popularity, rating
+    
+    filtered_problems = {}
+    
+    for name, details in DSA_PROBLEMS.items():
+        # Apply difficulty filter
+        if difficulty != 'all' and details['difficulty'] != difficulty:
+            continue
+            
+        # Apply category filter
+        if category != 'all' and category.lower() not in details['category'].lower():
+            continue
+            
+        # Apply company filter
+        if company != 'all' and 'companies' in details and company not in details['companies']:
+            continue
+            
+        # Apply tags filter
+        if tags and not any(tag in details['tags'] for tag in tags if tag):
+            continue
+            
+        # Apply rating filter
+        if 'user_rating' in details and details['user_rating'] < min_rating:
+            continue
+            
+        # Apply popularity filter
+        if 'popularity' in details and details['popularity'] < min_popularity:
+            continue
+            
+        filtered_problems[name] = details
+    
+    # Sort problems
+    if sort_by == 'difficulty':
+        difficulty_order = {'Easy': 1, 'Medium': 2, 'Hard': 3}
+        filtered_problems = dict(sorted(filtered_problems.items(), 
+                                      key=lambda x: difficulty_order.get(x[1]['difficulty'], 4)))
+    elif sort_by == 'popularity':
+        filtered_problems = dict(sorted(filtered_problems.items(), 
+                                      key=lambda x: x[1].get('popularity', 0), reverse=True))
+    elif sort_by == 'rating':
+        filtered_problems = dict(sorted(filtered_problems.items(), 
+                                      key=lambda x: x[1].get('user_rating', 0), reverse=True))
+    else:  # sort by name
+        filtered_problems = dict(sorted(filtered_problems.items()))
+    
+    return jsonify(filtered_problems)
+
+@app.route('/search_problems_advanced')
+def search_problems_advanced():
+    query = request.args.get('query', '').lower()
+    if not query:
+        return jsonify(list(DSA_PROBLEMS.keys()))
+    
+    # Search in problem names, statements, categories, and tags
+    results = []
+    for name, details in DSA_PROBLEMS.items():
+        if (query in name.lower() or 
+            query in details['statement'].lower() or
+            query in details['category'].lower() or
+            any(query in tag.lower() for tag in details['tags'])):
+            results.append({
+                'name': name,
+                'difficulty': details['difficulty'],
+                'category': details['category'],
+                'companies': details.get('companies', []),
+                'popularity': details.get('popularity', 0),
+                'user_rating': details.get('user_rating', 0)
+            })
+    
+    return jsonify(results)
+
+@app.route('/get_next_problem_recommendation')
+def get_next_problem_recommendation():
+    # Get user's current skill level and solved problems
+    user_level = request.args.get('user_level', 'beginner')  # beginner, intermediate, advanced
+    solved_problems = request.args.get('solved_problems', '').split(',') if request.args.get('solved_problems') else []
+    preferred_category = request.args.get('category', 'all')
+    
+    # Define difficulty progression based on user level
+    if user_level == 'beginner':
+        target_difficulty = 'Easy'
+        max_attempts = 3
+    elif user_level == 'intermediate':
+        target_difficulty = 'Medium'
+        max_attempts = 5
+    else:  # advanced
+        target_difficulty = 'Hard'
+        max_attempts = 8
+    
+    # Filter problems based on criteria
+    candidate_problems = []
+    for name, details in DSA_PROBLEMS.items():
+        if name in solved_problems:
+            continue
+            
+        if details['difficulty'] == target_difficulty:
+            if preferred_category == 'all' or preferred_category.lower() in details['category'].lower():
+                # Calculate recommendation score based on popularity and rating
+                score = details.get('popularity', 50) * 0.6 + details.get('user_rating', 4.0) * 10
+                candidate_problems.append((name, details, score))
+    
+    # Sort by recommendation score and return top recommendations
+    candidate_problems.sort(key=lambda x: x[2], reverse=True)
+    
+    recommendations = []
+    for name, details, score in candidate_problems[:5]:
+        recommendations.append({
+            'name': name,
+            'difficulty': details['difficulty'],
+            'category': details['category'],
+            'companies': details.get('companies', []),
+            'popularity': details.get('popularity', 0),
+            'user_rating': details.get('user_rating', 0),
+            'recommendation_reason': f"Great {details['difficulty'].lower()} problem in {details['category']} category"
+        })
+    
+    return jsonify(recommendations)
+
+@app.route('/get_company_problems')
+def get_company_problems():
+    company = request.args.get('company', 'all')
+    if company == 'all':
+        return jsonify(DSA_PROBLEMS)
+    
+    company_problems = {}
+    for name, details in DSA_PROBLEMS.items():
+        if 'companies' in details and company in details['companies']:
+            company_problems[name] = details
+    
+    return jsonify(company_problems)
+
+@app.route('/get_popular_problems')
+def get_popular_problems():
+    limit = int(request.args.get('limit', 20))
+    
+    # Get problems sorted by popularity
+    popular_problems = []
+    for name, details in DSA_PROBLEMS.items():
+        if 'popularity' in details:
+            popular_problems.append((name, details, details['popularity']))
+    
+    popular_problems.sort(key=lambda x: x[2], reverse=True)
+    
+    result = {}
+    for name, details, popularity in popular_problems[:limit]:
+        result[name] = details
+    
+    return jsonify(result)
+
+@app.route('/get_highly_rated_problems')
+def get_highly_rated_problems():
+    min_rating = float(request.args.get('min_rating', 4.5))
+    
+    highly_rated = {}
+    for name, details in DSA_PROBLEMS.items():
+        if 'user_rating' in details and details['user_rating'] >= min_rating:
+            highly_rated[name] = details
+    
+    return jsonify(highly_rated)
+
+# Function to add company tags to problems that don't have them
+def add_company_tags_to_problems():
+    """Add company tags to problems that don't have them based on problem characteristics"""
+    
+    # Company-specific problem patterns
+    company_patterns = {
+        "Google": ["array", "string", "dp", "tree", "graph", "binary-search", "two-pointers"],
+        "Amazon": ["array", "dp", "tree", "hash-table", "stack", "queue", "greedy"],
+        "Microsoft": ["string", "array", "dp", "tree", "linked-list", "math"],
+        "Meta": ["array", "string", "dp", "tree", "graph", "backtracking"],
+        "Apple": ["array", "string", "dp", "tree", "linked-list", "math"],
+        "Uber": ["array", "dp", "tree", "graph", "hash-table", "sliding-window"],
+        "Netflix": ["array", "string", "dp", "tree", "backtracking", "greedy"],
+        "Airbnb": ["string", "array", "dp", "tree", "hash-table", "backtracking"],
+        "LinkedIn": ["array", "string", "dp", "tree", "linked-list", "hash-table"],
+        "Bloomberg": ["array", "string", "dp", "tree", "linked-list", "hash-table"],
+        "Goldman Sachs": ["array", "dp", "tree", "math", "greedy", "hash-table"],
+        "JP Morgan": ["array", "dp", "tree", "math", "greedy", "hash-table"],
+        "Morgan Stanley": ["array", "dp", "tree", "math", "greedy", "hash-table"],
+        "Two Sigma": ["array", "dp", "tree", "math", "greedy", "bit-manipulation"],
+        "Citadel": ["array", "dp", "tree", "math", "greedy", "bit-manipulation"],
+        "Jane Street": ["array", "dp", "tree", "math", "greedy", "bit-manipulation"]
+    }
+    
+    # Add company tags to problems that don't have them
+    for name, details in DSA_PROBLEMS.items():
+        if 'companies' not in details:
+            details['companies'] = []
+            
+        if 'popularity' not in details:
+            details['popularity'] = 70  # Default popularity
+            
+        if 'user_rating' not in details:
+            details['user_rating'] = 4.0  # Default rating
+            
+        # Assign companies based on tags and difficulty
+        if not details['companies']:
+            for company, patterns in company_patterns.items():
+                if any(pattern in tag for tag in details['tags']):
+                    details['companies'].append(company)
+                    
+            # Add FAANG companies to popular problems
+            if details['difficulty'] == 'Easy' and details.get('popularity', 70) > 80:
+                faang_companies = ["Google", "Amazon", "Microsoft", "Meta", "Apple"]
+                for company in faang_companies:
+                    if company not in details['companies']:
+                        details['companies'].append(company)
+
+# Initialize company tags when the app starts
+add_company_tags_to_problems()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
